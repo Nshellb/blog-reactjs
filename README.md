@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+ReactJS 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ReactJS 강의 참고
+https://www.youtube.com/watch?v=LclObYwGj90&list=PLfLgtT94nNq1e6tr4sm2eH6ZZC2jcqGOy&index=1
 
-## Available Scripts
+React 등장 배경
+https://react.vlpt.us/basic/01-concept.html
 
-In the project directory, you can run:
+JSX 설명 - React 공식문서
+https://ko.reactjs.org/docs/introducing-jsx.html
 
-### `npm start`
+React Extension (VSCode, Chrome)
+https://sddev.tistory.com/187
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+React 기초 1강 : 리액트 설치와 셋팅법 (2021+ 스타일)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+0) React란? (wikipedia.org 참고)
+리액트(React, React.js 또는 ReactJS)는 자바스크립트 라이브러리의 하나로서 사용자 인터페이스를 만들기 위해 사용된다.
 
-### `npm run build`
+싱글 페이지 애플리케이션이나 모바일 애플리케이션 개발에 사용될 수 있다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+대규모 또는 복잡한 리액트 애플리케이션 개발에는 보통 라우팅, API통신 등의 기능이 요구되는데 리액트에는 기본적으로 제공되지 않기 때문에 추가 라이브러리를 사용해야 한다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1) Node.js 설치
+홈페이지 접속하여 LTS 버전 설치
+create-react-app이라는 라이브러리 설치하기 위함. (npm 설치)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2) ReactJS 프로젝트 생성
+> npx create-react-app [프로젝트명]
+[프로젝트명]을 가진 React.js 하위 디렉토리가 생성된다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3) ReactJS 내부 파일 설명
+/src/App.js : Main page; index.html과 유사
+main page에 들어갈 html을 짜는 공간.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+실제 main page는 /public/index.html에 있다.
+/public/index.html의 <div id="root"></div>에 App.js의 html 코드가 적용된다.
 
-## Learn More
+/src/index.js 에서 App.js 에 작성된 코드가 index.html 에서 동작하도록 하는 코드가 작성된다.
+document.getElementById('root') : root라는 id 공간에 App.js의 코드를 넣어라.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+/node_modules : 라이브러리가 모두 저장되는 공간.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+/public : static 파일 보관함. (이미지, favicon...)
 
-### Code Splitting
+/src : 실제 ReactJS 작성 소스코드 저장 공간.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+package.json : 설치한 라이브러리 목록이 정의되는 공간.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4) ReactJS 구동
+생성한 ReactJS 프로젝트 디렉토리에서 ReactJS 로컬 구동
+> npm start
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+App.js의 p태그를 수정하고 저장하면 자동으로 반영되는것을 확인할 수 있다.
