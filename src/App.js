@@ -1,24 +1,30 @@
+import React, { useState } from 'react';
 import './App.css';
-import logo from './logo.svg';
 
 function App() {
 
-  let posts = "강남 고기 맛집";
-  let cus_style = { color : 'blue', fontSize : '30px' }; // JSX Style 응용
-
-  function out100() {
-    return 100
-  }
+  let [title, title_modify] = useState(['맛있는 떡볶이', '35년 전통 국수', 'Vue.js vs React']);
 
   return (
     <div className="App">
       <div className="black-nav">
-        <div style={ { color : 'blue', fontSize : '30px' } }>개발 Blog</div>
+        <div>개발 Blog</div>
       </div>
-      <img src={ logo } style={ { height : 100 } } />
-      <h4> { posts } </h4>
-      <h4 style={ cus_style }> { posts } </h4>
-      <h4> { out100() } </h4>
+      <div className="list">
+        <h3> { title[0] } </h3>
+        <p>4월 26일 발행</p>
+        <hr/>
+      </div>
+      <div className="list">
+        <h3> { title[1] } </h3>
+        <p>4월 27일 발행</p>
+        <hr/>
+      </div>
+      <div className="list">
+        <h3> { title[2] } </h3>
+        <p>4월 28일 발행</p>
+        <hr/>
+      </div>
     </div>
   );
 }

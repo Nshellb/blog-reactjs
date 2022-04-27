@@ -108,3 +108,46 @@ style={ object 자료형으로 만든 style } 형식으로 작성한다.
 font-size 속성과 같이 '-' 기호가 포함된 속성명의 경우
 camelCase 작명관습에 따라 속성명을 변경하여 작성해야 한다.
 font-size -> fontSize
+
+
+
+
+
+React 기초 3강 : 리액트에선 변수말고 state 만들어 쓰랬죠 (useState)
+
+1) list 작성
+App.js에 lsit class를 작성하고 App.css에 list CSS 속성을 작성한다.
+
+2) State
+React에서 데이터를 저장했다가 바인딩하는 두 가지 방법이 있다.
+변수에 넣는다 OR state에 넣는다.
+
+여기서는 블로그 포스팅 제목을 바인딩하기위해 state를 사용하였다.
+
+
+state 사용을 위해서 App.js에 state 사용을 위한 구문을 추가한다.
+import React, { useState } from 'react';
+// React 안에 있는 내장함수(여기서는 useState)를 사용하겠다.
+-> State는 변수대신 쓰는 데이터 저장공간이며
+ / useState()를 이용해서 만들어야하고
+ / 문자, 숫자, array, object 모든 형식을 저장할 수 있다.
+
+
+useState('data1'); 와 같이 사용한다.
+이때 데이터가 2개 들어간 array가 생기는데 
+[a, b] -> a: 'data1', b: data1라는 데이터를 변경하기 위한 함수가 들어간다.
+-> useState('data1'); = [state 데이터, state 데이터 변경 함수]
+
+
+* ES6 destructuring 문법
+array, object에 있던 자료를 변수에 쉽게 담고 싶을때 사용한다.
+var [a, b] = [10, 100]; // 양변의 형식 통일이 필요
+10이라는 값은 a에, 100이라는 값은 b에 담아주세요~
+-> var a = 10; var b = 100;과 같다.
+
+
+3) State에 데이터를 저장하는 이유
+state는 변경되면 HTML이 자동으로 재랜더링이 된다.
+-> HTML을 새로고침 하지않아도 데이터가 자연스럽게 변경이 된다.
+
+자주 바뀌거나 중요한 데이터는 변수 대신 state로 저장해서 사용하자!
