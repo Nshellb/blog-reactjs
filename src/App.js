@@ -4,6 +4,7 @@ import './App.css';
 function App() {
 
   let [title, title_modify] = useState(['맛있는 떡볶이', '35년 전통 국수', 'Vue.js vs React']);
+  let [like, like_modify] = useState(0);
 
   return (
     <div className="App">
@@ -11,7 +12,7 @@ function App() {
         <div>개발 Blog</div>
       </div>
       <div className="list">
-        <h3> { title[0] } </h3>
+        <h3> { title[0] } <span onClick={ () => { like_modify(like + 1) } }>👍</span> { like } </h3>
         <p>4월 26일 발행</p>
         <hr/>
       </div>
