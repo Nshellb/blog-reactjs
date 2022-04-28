@@ -219,3 +219,54 @@ var newArray = [...title]; 와 같이 별개의 복사본으로 복사해야 한
 변경함수( 대체할 데이터 ); 의 형태를 가진다.
 state 값은 직접 변경이 불가능하며 [...state변수명]과 같이 Deep copy하여 
 복사본에서 데이터 변경을 수행하고 이를 대체할 데이터로 덮어쓰기한다.
+
+
+
+
+
+React 기초 6강 : Component로 HTML 깔끔하게 줄이는 법
+modal 창으로 상세페이지 띄우기
+1) Componet의 필요성
+모달창틀(JSX)을 App.js에 모두 작성하면 코드 가독성이 떨어지기에 별개의 구문으로 분리한다.
+-> JSX 코드를 별개의 구문으로 분리하고 축약하여 작성이 가능한것이 React의 Componet 문법이다.
+한번에 JSX 코드 구문을 관리할수 있어 편리하다.
+
+
+2) Component 구현
+function Componet명() {
+    return {
+        ~JSX
+    }
+}
+Componet를 JSX를 채워넣어 구현하고
+
+기존 App.js의 메인 return div안에 <Componet명></Componet명> 혹은 <Component명 />과 같이 사용한다.
+
+(+ 모달창 CSS를 작성한다.)
+
+
+3) Componet 작성시 유의사항
+이름의 첫글자는 대문자
+return() 안의 태그들은 하나의 태그안에 모두 속해야한다.
+(의미 없는 div를 쓰고 싶지 않다면 <> </>를 처음과 끝에 사용한다.)
+State를 사용하여 데이터 바인딩시 복잡한 과정이 추가된다.
+(App에 선언된 state를 다른 Componet에서 접근을 바로 할수 없다.)
+(상위 Componet에서 만든 state를 사용하려면 props 문법을 사용해야한다.)
+
+
+4) Componet로 만드는 기준
+반복적인 형태로 출력되어야하는 JSX 덩어리.
+자주 변경되는 HTML UI들. 
+(재랜더링이 자주 발생하는 구문을 Componet로 만들면 랜더링양이줄고 퍼포먼스가 올라간다.)
+다른 페이지를 만드는 경우.
+
+
+* React의 JSX 전체를 감싸는 div 태그는 하나만 있을수 있다.
+return {
+    <div></div>
+    <div></div>
+    <div></div>
+}
+불가능하다.
+
+* function App() {~} 또한 하나의 Componet와 같다.
